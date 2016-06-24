@@ -41,33 +41,33 @@ gulp.task('scripts', function () {
 });
 
 // Build
-gulp.task('build:serve', function() {
-  browsersync({
-    server: {
-      baseDir: "build/"
-    }
-  });
-});
-
-gulp.task('build:cleanfolder', function (cb) {
-  del([
-    'build/**'
-  ]);
-  cb();
-});
-
-gulp.task('build:copy', ['build:cleanfolder'], function () {
-  return gulp.src('site/**/*/')
-  .pipe(gulp.dest('build/'));
-});
-
-gulp.task('build:remove', ['build:copy'], function (cb) {
-  del([
-    'build/scss/'
-  ]);
-  cb();
-});
-gulp.task('build', ['build:copy', 'build:remove']);
+// gulp.task('build:serve', function() {
+//   browsersync({
+//     server: {
+//       baseDir: "build/"
+//     }
+//   });
+// });
+//
+// gulp.task('build:cleanfolder', function (cb) {
+//   del([
+//     'build/**'
+//   ]);
+//   cb();
+// });
+//
+// gulp.task('build:copy', ['build:cleanfolder'], function () {
+//   return gulp.src('site/**/*/')
+//   .pipe(gulp.dest('build/'));
+// });
+//
+// gulp.task('build:remove', ['build:copy'], function (cb) {
+//   del([
+//     'build/scss/'
+//   ]);
+//   cb();
+// });
+// gulp.task('build', ['build:copy', 'build:remove']);
 
 
 // Watch

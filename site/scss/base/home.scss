@@ -1,10 +1,9 @@
-// Home
+// HOME
+// IMPORTS
 @import 'vars';
-@import '../utils/mixins';
+@import 'utils/mixins';
 
-@mixin hide-text { text-indent: 100%; white-space: nowrap; overflow: hidden; }
-
-
+// Resets
 * {
   box-sizing: border-box;
 }
@@ -68,6 +67,8 @@ ul {
   list-style: none;
   margin: 0;
 }
+
+// Main Styles
 nav {
   position: relative;
   #logo {
