@@ -1,0 +1,22 @@
+{
+  "name": "squiz-cutup",
+  "description": "fe",
+  "main": "./site/index.html",
+  "authors": [
+    "Marcin Bauer"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "normalize-scss": "normalize.scss#^5.0.3",
+    "jquery": "^3.0.0",
+    "html5shiv": "^3.7.3"
+  }
+}
