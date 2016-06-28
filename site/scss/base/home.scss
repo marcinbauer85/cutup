@@ -68,28 +68,32 @@ ul {
   margin: 0;
 }
 
+.main-wrapper {
+  max-width: $desktop;
+  margin: 0 auto;
+}
+
+.full-width-bar {
+  margin: 0 -9999rem;
+  padding: 0 9999rem;
+}
+
 // Main Styles
 nav {
   position: relative;
   #logo {
     position: absolute;
-    top: 34px;
-    left: 30px;
-    a {
-      display: block;
-      background: url('../img/logo.png') center center no-repeat;
-      width: 41px;
-      height: 41px;
-    }
-    @media (min-width: $mobile) {
+    top: 28px;
+    left: 1.5rem;
+    width: 41px;
+    height: 41px;
+    @media screen and (min-width: $mobile) {
       top: 14px;
       left: 40px;
-      a {
-        width: 82px;
-        height: 82px;
-      }
+      width: 82px;
+      height: 82px;
     }
-    @include hide-text;
+    // @include hide-text;
   }
 }
 
@@ -99,39 +103,90 @@ nav {
   align-items: center;
   flex-wrap: wrap;
 }
-.topbar ul li {
-  margin-left: 14px;
-}
 
-@media (min-width: $tablet) {
+@media screen and (min-width: $tablet) {
   .menu ul li {
-    margin-left: 14px;
+    margin-left: 5rem;
   }
   .menu ul {
-    padding: 20px 0;
+    padding-top: 20px;
+    padding-bottom: 0px;
   }
 }
 
 .topbar {
+  // position: relative;
   background-color: $headerColor1;
   font-size: 1.2rem;
   text-transform: uppercase;
-  #search a {
+
+  a, a:hover, a:focus {
+    color: #231f20;
+  }
+
+  #search {
+    position: relative;
     display: block;
-    background: url('../img/search.png') center center no-repeat;
     background-color: $accentColor1;
-    width: 60px;
-    height: 40px;
+    height: 38px;
+
+    #box {
+      position: absolute;
+      top:0;
+      right: 56px;
+      display: block;
+      background-color: $accentColor1;
+      height: 38px;
+      width: 200px;
+      padding: 5px;
+      vertical-align: top;
+      input[type=text] {
+        background: linear-gradient(#960314, #79010f);
+        box-shadow: 1px 1px #f17b7b, inset 0 2px 4px rgba(0,0,0,0.11);
+        border: none;
+        border-radius: 5px;
+        font-size: 1.5rem;
+        padding: 4px;
+        color: white;
+        &::placeholder {
+          color: white;
+        }
+      }
+    }
+
+    #search-button {
+      display: inline-block;
+      width: 56px;
+      height: 38px;
+      img {
+        display: block;
+        margin: 0 auto;
+        margin-top: 7px;
+      }
+      // background: url(../img/search.png) center center no-repeat;
+    }
+  }
+  ul {
+    display: flex;
+    height: 38px;
+  }
+  ul li:not(:last-child) {
+    margin-right: 5%;
   }
 }
 
 .menu {
   display: flex;
   flex-direction: column;
+  background: url('../img/shadow.png') center top repeat-x;
   background-color: $headerColor2;
   font-size: 1.6rem;
 
+  a, a:hover, a:focus {
+    color: #231f20;
+  }
   ul {
+    // margin-left: 120px;
     flex-direction: column;
     li {
       margin-top: 5px;
@@ -139,17 +194,20 @@ nav {
     }
   }
 
-  #cart a {
-    display: block;
-    background-color: $accentColor1;
-    background: url('../img/cart.png') center center no-repeat;
-    width: 60px;
-    height: 40px;
-    @include hide-text;
+  #cart {
+    a {
+      display: block;
+      width: 60px;
+      height: 32px;
+    }
+    img {
+      display: block;
+      margin: 0 auto;
+      margin-top: 8px;
+    }
   }
 
   .menu-icon {
-    // display: inline-block;
     align-self: center;
     padding: 20px;
     a {
@@ -160,47 +218,43 @@ nav {
     }
   }
 
-  @media (min-width: $tablet) {
+  @media screen and (min-width: $tablet) {
     ul {
       display: flex;
       flex-direction: row;
+      margin-left: 120px;
     }
     .menu-icon {
       display: none;
     }
-  }
-
-  @media (max-width: $tablet) {
-    .hidden {
-      display: none;
+    #cart {
+      // border-left: 1px solid #cccccc;
+      // &:before {
+      //   display: block;
+      //   content: '';
+      //   border-left: 1px solid white;
+      //   height: 100%;
+      // }
     }
   }
-}
 
-.main-wrapper {
-  max-width: 960px;
-  margin: 0 auto;
-}
-
-.full-width-bar {
-  margin: 0 -9999rem;
-  /* add back negative margin value */
-  padding: 0 9999rem;
-  // background: rgba(0, 0, 0, 0.5);
+  // @media screen and (max-width: $tablet) {
+  //   .hidden {
+  //     display: none;
+  //   }
+  // }
 }
 
 #hero {
   min-height: $sliderHeightMobile;
   background: url('../img/slider-photo1.png') center center no-repeat;
+  margin-top: 10px;
   background-size: cover;
 
   // slide nav
   nav {
     position: relative;
     min-height: $sliderHeightMobile;
-    // display: flex;
-    // justify-content: space-between;
-    // align-items: center;
   }
   .next-button, .prev-button {
     a {
@@ -209,22 +263,18 @@ nav {
       height: 52px;
       background-position: center;
       background-repeat: no-repeat;
-      background-color: red;
       top: $sliderHeightMobile/2;
       transform: translate(0, -50%);
       transition: opacity .5s;
       &:hover {
         opacity: .6;
       }
-      @include hide-text;
     }
   }
   .next-button a {
-    background: url('../img/next.png');
     right: 20px;
   }
   .prev-button a {
-    background: url('../img/prev.png');
     left: 20px;
   }
 
@@ -241,13 +291,14 @@ nav {
     flex-direction: column;
 
     h2 {
-      font-size: 2.4rem;
+      font-size: 2.6rem;
       font-weight: 200;
     }
 
     .controls {
       align-self: center;
       ul {
+        filter: drop-shadow(0px 3px 3px);
         display: flex;
         margin-top: 10px;
         a {display: block;}
@@ -272,12 +323,12 @@ nav {
           @include hide-text;
         }
         &>li:not(:first-child) {
-          margin-left: 6px;
+          margin-left: 10px;
         }
       }
     }
 
-    @media (min-width: $tablet) {
+    @media screen and (min-width: $tablet) {
       flex-direction: row;
       justify-content: space-between;
       .controls {
@@ -287,7 +338,7 @@ nav {
     }
   }
 
-  @media (min-width: $tablet) {
+  @media screen and (min-width: $tablet) {
     min-height: $sliderHeightTablet;
     nav {
       min-height: $sliderHeightTablet;
@@ -306,8 +357,8 @@ main {
     width: 100%;
     padding: 20px;
 
-    @media (min-width: $mobile) {width: 50%;}
-    @media (min-width: $tablet) {width: 33.333333%;}
+    @media screen and (min-width: $mobile) {width: 50%;}
+    @media screen and (min-width: $tablet) {width: 33.333333%;}
 
     .thumb {
       background-color: #000;
@@ -337,15 +388,24 @@ main {
       color: lighten($fontDark, 30%);
     }
 
-    .view-more {display: block; padding: 1rem 0;}
+    .view-more {
+      display: block;
+      padding: 1rem 0;
+      img { vertical-align: middle; }
+    }
 
     .body {
       font-size: 1.2rem;
       line-height: 1.8rem;
     }
-    // section header
+    // headers
     h2 {
+      font-size: 2.6rem;
       font-weight: 200;
+      margin-bottom: 10px;
+    }
+    h4 {
+      font-weight: 400;
     }
 
     // date header
@@ -359,7 +419,6 @@ main {
     }
     ul li {
       display: flex;
-      border-bottom: 1px solid $headerColor2;
       padding: 1rem 0;
       a {
         flex-basis: 80px;
@@ -368,11 +427,21 @@ main {
       a > .thumb-cal {
         color: $fontDark;
       }
+      &:not(:last-child) {
+        border-bottom: 1px solid $seperatorColor1;
+      }
+
+      // Nie jestem pewien czy o to chodzilo czy o podkreslenie textu a:hover ->
+      &:first-child .meta .title {
+        border-bottom: 1px solid #999999
+
+      }
     }
 
     &#research {
       background-color: white;
       a {color: $linkColor1;}
+
     }
 
     &#events {
@@ -409,7 +478,8 @@ main {
         position: absolute;
         left: 0;
         top: 50%;
-        padding: 16px;
+        padding: 10px;
+        max-width: 170px;
         // width: 50%;
         color: $fontLight;
         font-weight: 200;
@@ -418,6 +488,7 @@ main {
         transform: translate(0, -50%);
         h2 {
           font-size: 2.2rem;
+          margin-bottom: 0;
         }
       }
       .footer {
@@ -428,15 +499,18 @@ main {
         color: $fontLight;
         line-height: 25px;
         padding: 10px;
+        text-align: center;
         background-color: #000;
-        border-top: 3px solid $accentColor1;
+        border-top: 4px solid $accentColor1;
 
         a {font-size: 1.8rem;}
+        img {vertical-align: middle;}
       }
     }
 
     &#tweets {
-      background-color: white;
+      background-color: $panelColor3;
+      line-height: 1.5rem;
       a {
         font-size: inherit;
         color: $accentColor1;
@@ -457,10 +531,10 @@ footer {
   align-items: center;
   border-top: 3px solid #cccccc;
   background-color: white;
-  @media (min-width: $mobile) {
+  @media screen and (min-width: $mobile) {
 
   }
-  @media (min-width: $tablet) {
+  @media screen and (min-width: $tablet) {
     flex-direction: row;
   }
 
@@ -469,7 +543,7 @@ footer {
     flex-direction: row;
   }
   .sitemap {
-    @media (max-width: $tablet) {
+    @media screen and (max-width: $tablet) {
       padding-bottom: 20px;
     }
   }
@@ -486,17 +560,17 @@ footer {
       }
     }
     li:not(:last-child) {
-      margin-right: 20px;
+      margin-right: 33px;
     }
-    @media (min-width: $tablet) {
+    @media screen and (min-width: $tablet) {
       justify-content: flex-start;
     }
   }
   .social > ul {
     li:not(:first-child) {
-      margin-left: 20px;
+      margin-left: 7px;
     }
-    @media (min-width: $tablet) {
+    @media screen and (min-width: $tablet) {
       justify-content: flex-end;
     }
   }
@@ -506,35 +580,21 @@ footer {
     width: 32px;
     height: 32px;
     vertical-align: middle;
-    background-position: center;
-    background-repeat: no-repeat;
-
-    &.tt {
-      background: url('../img/tt-icon.png');
-    }
-    &.fb {
-      background: url('../img/fb-icon.png');
-    }
-    &.yt {
-      background: url('../img/yt-icon.png');
-    }
-    &.fr {
-      background: url('../img/fr-icon.png');
-    }
-    &.mail {
-      background: url('../img/mail-icon.png');
-    }
-    &.rss {
-      background: url('../img/rss-icon.png');
-    }
   }
 }
 
+.spacer {
+  background-color: $spacerColor1;
+  min-height: 108px;
+}
+
 .link-arrow {
-  background: url('../img/link-arrow.png') center center no-repeat;
-  display: inline-block;
   vertical-align: middle;
   width: 25px;
   height: 25px;
   margin-left: 6px;
+}
+
+.hidden {
+  display: none !important;
 }

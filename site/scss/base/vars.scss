@@ -1,7 +1,8 @@
 // Breakpoints
+$small-mobile: 320px;
 $mobile: 480px;
 $tablet: 768px;
-$desktop: 960px;
+$desktop: 980px;
 
 // Typography
 
@@ -20,9 +21,14 @@ $linkColor2: #c8bca9;
 $headerColor1: #f4f4f4;
 $headerColor2: #e8e8e8;
 
+$seperatorColor1: #cccccc;
+
 $accentColor1: #a80c1e;
 
 $slider: #3f3b3a;
 
 $panelColor1: #231f20;
 $panelColor2: #e3ddd4;
+$panelColor3: #f5f3ef;
+
+$spacerColor1: #4c4d4f;

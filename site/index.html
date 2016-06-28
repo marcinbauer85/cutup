@@ -7,7 +7,7 @@
   <meta name="keywords" content="Keywords">
   <meta name="author" content="Marcin Bauer">
   <title>Some Website</title>
-  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/styles.min.css">
   <!--[if lt IE 9]>
       <script src="js/html5shiv.min.js"></script>
   <![endif]-->
@@ -15,32 +15,40 @@
 <body>
   <div class="main-wrapper">
     <nav>
-      <h1 id="logo"><a href="#">Company Name</a></h1>
       <div class="topbar full-width-bar">
+        <h1 id="logo"><a href="#"><img src="/img/logo@1x.png" srcset="/img/logo@1x.png 1x, /img/logo@2x.png 2x" alt="Website Logo"></a></h1>
         <ul>
           <li><a href="#">Contact Us</a></li>
           <li><a href="#">Subscribe</a></li>
           <li><a href="#">Login</a></li>
-          <li id="search"><a href="#" title="Search"></a></li>
+          <li id="search">
+            <div id="box" class="hidden">
+              <form action="search.php" method="get">
+                <input placeholder="Search" type="text" name="search-query" id="search-query">
+                <input type="submit" style="visibility: hidden;" tabindex="-1" />
+              </form>
+            </div>
+            <a id="search-button" href="#" title="Search"><img src="/img/search@1x.png" srcset="/img/search@1x.png 1x, /img/search@2x.png 2x" alt=""></a>
+          </li>
         </ul>
       </div>
       <div class="menu full-width-bar">
         <div class="menu-icon"><a href="#" title="Menu"></a></div>
-        <ul id="nav" class="hidden">
+        <ul id="nav">
           <li><a href="#">About ASPI</a></li>
           <li><a href="#">Media Centre</a></li>
           <li><a href="#">Membership</a></li>
           <li><a href="#">Events</a></li>
           <li><a href="#">Publications</a></li>
           <li><a href="#">Research</a></li>
-          <li id="cart"><a href="#">Your Cart</a></li>
+          <li id="cart"><a href="#"><img src="/img/cart@1x.png" srcset="/img/cart@1x.png 1x, /img/cart@2x.png 2x" alt="Your Cart"></a></li>
         </ul>
       </div>
     </nav>
     <header id="hero">
       <nav>
-        <div class="prev-button"><a href="#">View previous slide</a></div>
-        <div class="next-button"><a href="#">View next slide</a></div>
+        <div class="prev-button"><a href="#"><img src="/img/prev@1x.png" srcset="/img/prev@1x.png 1x, /img/prev@2x.png 2x" alt=""></a></div>
+        <div class="next-button"><a href="#"><img src="/img/next@1x.png" srcset="/img/next@1x.png 1x, /img/next@2x.png 2x" alt=""></a></div>
         <div class="caption">
           <div class="latest-news">
             <a href="#">
@@ -69,7 +77,7 @@
             <a href="#" title="Latest Research Image 1"><img class="thumb" src="img/rs-1.png" alt="Latest Research Image 1 Description"></a>
             <div class="meta">
               <p>21 May 2013</p>
-              <div>
+              <div class="title">
                 <a href="#">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro perspiciatis quasi animi sequi unde quisquam, saepe dolores accusamus suscipit doloribus in. Quis eum dolor accusantium corporis rem voluptatibus dolorem iusto.</a>
               </div>
               <div>Joe Bloggs</div>
@@ -79,7 +87,7 @@
             <a href="#" title="Latest Research Image 2"><img class="thumb" src="img/rs-2.png" alt="Latest Research Image 2 Description"></a>
             <div class="meta">
               <p>21 May 2013</p>
-              <div>
+              <div class="title">
                 <a href="#">Lorem ipsum dolor sit amet</a>
               </div>
               <div>Joe Bloggs</div>
@@ -89,7 +97,7 @@
             <a href="#" title="Latest Research Image 3"><img class="thumb" src="img/rs-3.png" alt="Latest Research Image 3 Description"></a>
             <div class="meta">
               <p>21 May 2013</p>
-              <div>
+              <div class="title">
                 <a href="#">Lorem ipsum dolor sit amet, consectetur</a>
               </div>
               <div>Joe Bloggs</div>
@@ -97,7 +105,7 @@
           </li>
         </ul>
         <div class="view-more">
-          <a href="#">View all research<span class="link-arrow"></span></a>
+          <a href="#">View all research <img src="/img/link-arrow@1x.png" srcset="/img/link-arrow@1x.png 1x, /img/link-arrow@2x.png 2x" alt="Show all research"></a>
         </div>
       </article>
       <article id="events">
@@ -110,7 +118,7 @@
               <div>
                 <a href="#">Lorem ipsum dolor sit amet, consectetur</a>
               </div>
-              <div><em>Speaker:</em> Joe Bloggs</div>
+              <div><b>Speaker:</b> Joe Bloggs</div>
             </div>
           </li>
           <li>
@@ -120,7 +128,7 @@
               <div>
                 <a href="#">Lorem ipsum dolor sit amet, consectetur</a>
               </div>
-              <div><em>Speaker:</em> Joe Bloggs</div>
+              <div><b>Speaker:</b> Joe Bloggs</div>
             </div>
           </li>
           <li>
@@ -130,12 +138,12 @@
               <div>
                 <a href="#">Lorem ipsum dolor sit amet, consectetur</a>
               </div>
-              <div><em>Speaker:</em> Joe Bloggs</div>
+              <div><b>Speaker:</b> Joe Bloggs</div>
             </div>
           </li>
         </ul>
         <div class="view-more">
-          <a href="#">View all events<span class="link-arrow"></span></a>
+          <a href="#">View all events <img src="/img/link-arrow@1x.png" srcset="/img/link-arrow@1x.png 1x, /img/link-arrow@2x.png 2x" alt="Show all events"></a>
         </div>
       </article>
       <article id="strategist">
@@ -187,7 +195,7 @@
           </li>
         </ul>
         <div class="view-more">
-          <a href="#">Read more on The Strategist<span class="link-arrow"></span></a>
+          <a href="#">Read more on The Strategist <img src="/img/link-arrow@1x.png" srcset="/img/link-arrow@1x.png 1x, /img/link-arrow@2x.png 2x" alt="Read more on The Strategist"></a>
         </div>
       </article>
       <article id="opinions">
@@ -199,7 +207,7 @@
                 <a href="#">Lorem ipsum dolor sit amet</a>
               </div>
               <h4>21 May 2013</h4>
-              <div><em>Author:</em> Joe Bloggs</div>
+              <div><b>Author:</b> Joe Bloggs</div>
             </div>
           </li>
           <li>
@@ -208,7 +216,7 @@
                 <a href="#">Lorem ipsum dolor sit amet</a>
               </div>
               <h4>21 May 2013</h4>
-              <div><em>Author:</em> Joe Bloggs</div>
+              <div><b>Author:</b> Joe Bloggs</div>
             </div>
           </li>
           <li>
@@ -217,7 +225,7 @@
                 <a href="#">Lorem ipsum dolor sit amet</a>
               </div>
               <h4>21 May 2013</h4>
-              <div><em>Author:</em> Joe Bloggs</div>
+              <div><b>Author:</b> Joe Bloggs</div>
             </div>
           </li>
         </ul>
@@ -227,10 +235,10 @@
       </article>
       <article id="ad">
         <div class="header">
-          <h2>Promotional<br/>Campign<br/>Area</h2>
+          <h2>Promotional Campign Area</h2>
         </div>
         <div class="footer">
-          <a href="#">Cyber Security Research<span class="link-arrow"></span></a>
+          <a href="#">Cyber Security Research <img src="/img/link-arrow@1x.png" srcset="/img/link-arrow@1x.png 1x, /img/link-arrow@2x.png 2x" alt="Cyber Security Research"></a>
         </div>
       </article>
       <article id="tweets">
@@ -280,15 +288,17 @@
       </div>
       <div class="social">
         <ul>
-          <li><a class="social-icon tt" href="#" title="Follow us on Twitter"></a></li>
-          <li><a class="social-icon fb" href="#" title="Visit us on Facebook"></a></li>
-          <li><a class="social-icon yt" href="#" title="View our Youtube"></a></li>
-          <li><a class="social-icon fr" href="#" title="View our Flikr"></a></li>
-          <li><a class="social-icon mail" href="#" title="Send us an e-mak"></a></li>
-          <li><a class="social-icon rss" href="#" title="RSS feed"></a></li>
+          <li><a class="social-icon tt" href="#" title="Follow us on Twitter"><img src="img/tt-icon@1x.png" srcset="img/tt-icon@1x.png 1x, img/tt-icon@2x.png 2x" alt="Twitter"></a></li>
+          <li><a class="social-icon fb" href="#" title="Visit us on Facebook"><img src="img/fb-icon@1x.png" srcset="img/fb-icon@1x.png 1x, img/fb-icon@2x.png 2x" alt="Facebook"></a></li>
+          <li><a class="social-icon yt" href="#" title="View our Youtube"><img src="img/yt-icon@1x.png" srcset="img/yt-icon@1x.png 1x, img/yt-icon@2x.png 2x" alt="Youtube"></a></li>
+          <li><a class="social-icon fr" href="#" title="View our Flikr"><img src="img/flikr-icon@1x.png" srcset="img/flikr-icon@1x.png 1x, img/flikr-icon@2x.png 2x" alt="Flikr"></a></li>
+          <li><a class="social-icon mail" href="#" title="Send us an e-mak"><img src="img/mail-icon@1x.png" srcset="img/mail-icon@1x.png 1x, img/mail-icon@2x.png 2x" alt="e-mail"></a></li>
+          <li><a class="social-icon rss" href="#" title="RSS feed"><img src="img/rss-icon@1x.png" srcset="img/rss-icon@1x.png 1x, img/rss-icon@2x.png 2x" alt="RSS"></a></li>
         </ul>
       </div>
     </footer>
+    <div class="spacer">
+    </div>
   </div>
   <script src="js/jquery.min.js" charset="utf-8"></script>
   <script src="js/functions.min.js" charset="utf-8"></script>

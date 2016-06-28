@@ -7,7 +7,8 @@ var gulp = require('gulp'),
     rename = require('gulp-rename'),
     scss = require('gulp-sass'),
     del = require('del'),
-    uglify = require('gulp-uglify');
+    uglify = require('gulp-uglify'),
+    cleancss =  require('gulp-clean-css');
 
 // Tasks
 
@@ -28,6 +29,8 @@ gulp.task('scss', function () {
   return gulp.src('site/scss/*.scss')
   .pipe(scss().on('error', scss.logError))
   .pipe(autoprefixer('last 2 versions'))
+  .pipe(cleancss({compatibility: 'ie8'}))
+  .pipe(rename({suffix:'.min'}))
   .pipe(gulp.dest('site/css/'))
   .pipe(reload({stream:true}));
 });
