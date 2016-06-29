@@ -8,32 +8,39 @@
   <meta name="author" content="Marcin Bauer">
   <title>Some Website</title>
   <link rel="stylesheet" href="css/styles.min.css">
+  <link rel="stylesheet" href="css/flexslider.css">
+  <script src="js/jquery.min.js" charset="utf-8"></script>
+  <script src="js/jquery.flexslider.min.js" charset="utf-8"></script>
   <!--[if lt IE 9]>
       <script src="js/html5shiv.min.js"></script>
   <![endif]-->
 </head>
-<body>
+<emody>
   <div class="main-wrapper">
     <nav>
       <div class="topbar full-width-bar">
-        <h1 id="logo"><a href="#"><img src="/img/logo@1x.png" srcset="/img/logo@1x.png 1x, /img/logo@2x.png 2x" alt="Website Logo"></a></h1>
+        <h1 id="logo"><a href="#"><img src="img/logo@1x.png" srcset="img/logo@1x.png 1x, img/logo@2x.png 2x" alt="Website Logo"></a></h1>
         <ul>
           <li><a href="#">Contact Us</a></li>
           <li><a href="#">Subscribe</a></li>
           <li><a href="#">Login</a></li>
           <li id="search">
+            <label for="search-toggle"></label>
+            <input type="checkbox" id="search-toggle">
             <div id="box" class="hidden">
               <form action="search.php" method="get">
+                <label for="search-query"></label>
                 <input placeholder="Search" type="text" name="search-query" id="search-query">
                 <input type="submit" style="visibility: hidden;" tabindex="-1" />
               </form>
             </div>
-            <a id="search-button" href="#" title="Search"><img src="/img/search@1x.png" srcset="/img/search@1x.png 1x, /img/search@2x.png 2x" alt=""></a>
+            <label for="search-toggle" id="search-button" type="text" title="Search"><img src="img/search@1x.png" srcset="img/search@1x.png 1x, img/search@2x.png 2x" alt=""></label>
           </li>
         </ul>
       </div>
       <div class="menu full-width-bar">
-        <div class="menu-icon"><a href="#" title="Menu"></a></div>
+        <label for="menu-toggle" class="menu-icon"><img src="img/ham-icon@1x.png" srcset="img/ham-icon@1x.png 1x, img/ham-icon@2x.png 2x" alt="Menu"></label>
+        <input type="checkbox" id="menu-toggle">
         <ul id="nav">
           <li><a href="#">About ASPI</a></li>
           <li><a href="#">Media Centre</a></li>
@@ -41,37 +48,49 @@
           <li><a href="#">Events</a></li>
           <li><a href="#">Publications</a></li>
           <li><a href="#">Research</a></li>
-          <li id="cart"><a href="#"><img src="/img/cart@1x.png" srcset="/img/cart@1x.png 1x, /img/cart@2x.png 2x" alt="Your Cart"></a></li>
+          <li id="cart"><a href="#"><img src="img/cart@1x.png" srcset="img/cart@1x.png 1x, img/cart@2x.png 2x" alt="Your Cart"></a></li>
         </ul>
       </div>
     </nav>
     <header id="hero">
-      <nav>
-        <div class="prev-button"><a href="#"><img src="/img/prev@1x.png" srcset="/img/prev@1x.png 1x, /img/prev@2x.png 2x" alt=""></a></div>
-        <div class="next-button"><a href="#"><img src="/img/next@1x.png" srcset="/img/next@1x.png 1x, /img/next@2x.png 2x" alt=""></a></div>
-        <div class="caption">
-          <div class="latest-news">
-            <a href="#">
-              <h2>Latest News Item</h2>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-            </a>
-          </div>
-          <div class="controls">
-            <ul>
-              <li><a class="dot active" href="#">First Slide</a></li>
-              <li><a class="dot" href="#">Second Slide</a></li>
-              <li><a class="dot" href="#">Third Slide</a></li>
-              <li><a class="dot" href="#">Fourht Slide</a></li>
-              <li><a class="dot" href="#">Fifth Slide</a></li>
-              <li><a class="pause" href="#">Pause</a></li>
-            </ul>
-          </div>
+      <div class="flexslider">
+        <ul class="slides">
+          <li class="slide"><img src="img/slider-photo1.png" alt="Slide1" />
+            <div class="flex-caption">
+              <a href="#"><h2>Latest News Item #1</h2>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit.</a>
+            </div>
+          </li>
+          <li class="slide"><img src="img/slider-photo1.png" alt="Slide2" />
+            <div class="flex-caption">
+              <a href="#"><h2>Latest News Item #2</h2>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit.</a>
+            </div>
+          </li>
+          <li class="slide"><img src="img/slider-photo1.png" alt="Slide3" />
+            <div class="flex-caption">
+              <a href="#"><h2>Latest News Item #3</h2>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit.</a>
+            </div>
+          </li>
+          <li class="slide"><img src="img/slider-photo1.png" alt="Slide4" />
+            <div class="flex-caption">
+              <a href="#"><h2>Latest News Item #4</h2>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit.</a>
+            </div>
+          </li>
+        </ul>
+        <div class="slider-controls">
         </div>
-      </nav>
+        <div class="slider-arrows">
+          <a class="flex-prev" href="#"><img src="img/prev@1x.png" srcset="img/prev@1x.png 1x, img/prev@2x.png 2x" alt="Previous Slide"></a>
+          <a class="flex-next" href="#"><img src="img/next@1x.png" srcset="img/next@1x.png 1x, img/next@2x.png 2x" alt="Next Slide"></a>
+        </div>
+      </div>
     </header>
     <main>
       <article id="research">
-        <h2>Latest Research</h2>
+        <h3>Latest Research</h3>
         <ul>
           <li>
             <a href="#" title="Latest Research Image 1"><img class="thumb" src="img/rs-1.png" alt="Latest Research Image 1 Description"></a>
@@ -105,11 +124,11 @@
           </li>
         </ul>
         <div class="view-more">
-          <a href="#">View all research <img src="/img/link-arrow@1x.png" srcset="/img/link-arrow@1x.png 1x, /img/link-arrow@2x.png 2x" alt="Show all research"></a>
+          <a href="#">View all research<img src="img/link-arrow@1x.png" srcset="img/link-arrow@1x.png 1x, img/link-arrow@2x.png 2x" alt="Show all research"></a>
         </div>
       </article>
       <article id="events">
-        <h2>Events</h2>
+        <h3>Events</h3>
         <ul>
           <li>
             <a href="#" title="Event Image 1"><img class="thumb" src="img/ev-1.png" alt="Events Image 1 Description"></a>
@@ -118,7 +137,7 @@
               <div>
                 <a href="#">Lorem ipsum dolor sit amet, consectetur</a>
               </div>
-              <div><b>Speaker:</b> Joe Bloggs</div>
+              <div><em>Speaker:</em> Joe Bloggs</div>
             </div>
           </li>
           <li>
@@ -128,7 +147,7 @@
               <div>
                 <a href="#">Lorem ipsum dolor sit amet, consectetur</a>
               </div>
-              <div><b>Speaker:</b> Joe Bloggs</div>
+              <div><em>Speaker:</em> Joe Bloggs</div>
             </div>
           </li>
           <li>
@@ -138,16 +157,16 @@
               <div>
                 <a href="#">Lorem ipsum dolor sit amet, consectetur</a>
               </div>
-              <div><b>Speaker:</b> Joe Bloggs</div>
+              <div><em>Speaker:</em> Joe Bloggs</div>
             </div>
           </li>
         </ul>
         <div class="view-more">
-          <a href="#">View all events <img src="/img/link-arrow@1x.png" srcset="/img/link-arrow@1x.png 1x, /img/link-arrow@2x.png 2x" alt="Show all events"></a>
+          <a href="#">View all events<img src="img/link-arrow@1x.png" srcset="img/link-arrow@1x.png 1x, img/link-arrow@2x.png 2x" alt="Show all events"></a>
         </div>
       </article>
       <article id="strategist">
-        <h2>The Strategist</h2>
+        <h3>The Strategist</h3>
         <ul>
           <li>
             <a href="#" title="May 31">
@@ -195,11 +214,11 @@
           </li>
         </ul>
         <div class="view-more">
-          <a href="#">Read more on The Strategist <img src="/img/link-arrow@1x.png" srcset="/img/link-arrow@1x.png 1x, /img/link-arrow@2x.png 2x" alt="Read more on The Strategist"></a>
+          <a href="#">Read more on The Strategist<img src="img/link-arrow@1x.png" srcset="img/link-arrow@1x.png 1x, img/link-arrow@2x.png 2x" alt="Read more on The Strategist"></a>
         </div>
       </article>
       <article id="opinions">
-        <h2>Opinion Pieces</h2>
+        <h3>Opinion Pieces</h3>
         <ul>
           <li>
             <div class="meta">
@@ -207,7 +226,7 @@
                 <a href="#">Lorem ipsum dolor sit amet</a>
               </div>
               <h4>21 May 2013</h4>
-              <div><b>Author:</b> Joe Bloggs</div>
+              <div><em>Author:</em> Joe Bloggs</div>
             </div>
           </li>
           <li>
@@ -216,7 +235,7 @@
                 <a href="#">Lorem ipsum dolor sit amet</a>
               </div>
               <h4>21 May 2013</h4>
-              <div><b>Author:</b> Joe Bloggs</div>
+              <div><em>Author:</em> Joe Bloggs</div>
             </div>
           </li>
           <li>
@@ -225,24 +244,24 @@
                 <a href="#">Lorem ipsum dolor sit amet</a>
               </div>
               <h4>21 May 2013</h4>
-              <div><b>Author:</b> Joe Bloggs</div>
+              <div><em>Author:</em> Joe Bloggs</div>
             </div>
           </li>
         </ul>
         <div class="view-more">
-          <a href="#">View all opinion pieces<span class="link-arrow"></span></a>
+          <a href="#">View all opinion pieces<img src="img/link-arrow@1x.png" srcset="img/link-arrow@1x.png 1x, img/link-arrow@2x.png 2x" alt="View all opinion pieces"></a>
         </div>
       </article>
       <article id="ad">
         <div class="header">
-          <h2>Promotional Campign Area</h2>
+          <h3>Promotional Campign Area</h3>
         </div>
         <div class="footer">
-          <a href="#">Cyber Security Research <img src="/img/link-arrow@1x.png" srcset="/img/link-arrow@1x.png 1x, /img/link-arrow@2x.png 2x" alt="Cyber Security Research"></a>
+          <a href="#">Cyber Security Research<img src="img/link-arrow@1x.png" srcset="img/link-arrow@1x.png 1x, img/link-arrow@2x.png 2x" alt="Cyber Security Research"></a>
         </div>
       </article>
       <article id="tweets">
-        <h2>Latest Tweets</h2>
+        <h3>Latest Tweets</h3>
         <ul>
           <li>
             <div class="meta">
@@ -300,7 +319,6 @@
     <div class="spacer">
     </div>
   </div>
-  <script src="js/jquery.min.js" charset="utf-8"></script>
   <script src="js/functions.min.js" charset="utf-8"></script>
 </body>
 </html>
